@@ -7,13 +7,13 @@ import Charts from "../Components/Home_Components/Charts";
 function Home() {
   return (
     <div className="flex flex-col">
-      <div>
+      <div className="px-3 pt-3 md:p-0 lg:p-0">
         <Analytics />
       </div>
-      <div className="flex flex-col  md:flex lg:flex-row p-2 space-x-2">
+      <div className="flex flex-col md:flex lg:flex-row p-2 space-x-2">
         <TopDisplay />
       </div>
-      <div className="w-full p-3">
+      <div className="w-full px-3">
         <Charts />
       </div>
       <div>

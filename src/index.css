@@ -106,4 +106,5 @@ body {
   visibility: visible;
   opacity: 1;
   top: 35px;
+  z-index: 10;
 }
