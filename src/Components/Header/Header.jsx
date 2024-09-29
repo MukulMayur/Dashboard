@@ -40,7 +40,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center px-4 py-3 lg:h-14 sm:h-10 md:h-12 bg-white shadow-md">
+    <div className="flex justify-between items-center px-4 py-3 lg:h-14 sm:h-10 md:h-12 bg-white shadow-md hidden">
       <div className="flex items-center justify-between space-x-4">
         {!issearch && (
           <Tooltip text="Search">

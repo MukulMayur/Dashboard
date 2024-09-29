@@ -103,7 +103,7 @@ function Table() {
   const paginatedData = searchrecord.slice(startIndex, endIndex);
 
   return (
-    <div className="flex flex-col items-center bg-[#FFFFFF] shadow-md p-6 py-4 m-2 rounded-md space-y-4">
+    <div className="flex flex-col items-center bg-[#FFFFFF] shadow-md p-6 py-4 m-2 rounded-md space-y-4 hidden">
       <div className="flex items-center justify-between w-full">
         <div className="w-[5%]">
           <GrTable size={28} className="text-gray-500" />
@@ -142,7 +142,7 @@ function Table() {
           />
           <button
             onClick={handleReset}
-            className="bg-gray-200 text-gray-800 px-4 py-1 rounded-lg hover:bg-gray-300"
+            className="bg-gray-200 text-gray-800 px-4 py-1 rounded-lg hover:bg-gray-300 hidden"
           >
             Reset
           </button>
@@ -167,19 +167,19 @@ function Table() {
                 {getSortIcon("position")}
               </td>
               <td
-                className="px-4 py-2 w-[15%]"
+                className="px-4 py-2 w-[15%] hidden"
                 onClick={() => handleSort("office")}
               >
                 Office {getSortIcon("office")}
               </td>
               <td
-                className="px-4 py-2 w-[10%]"
+                className="px-4 py-2 w-[10%] hidden"
                 onClick={() => handleSort("age")}
               >
                 Age {getSortIcon("age")}
               </td>
               <td
-                className="px-4 py-2 w-[15%]"
+                className="px-4 py-2 w-[15%] hidden"
                 onClick={() => handleSort("startDate")}
               >
                 Start Date {getSortIcon("startDate")}
@@ -215,9 +215,9 @@ function Table() {
                     <div>{data.name}</div>
                   </td>
                   <td className="px-4 py-2">{data.position}</td>
-                  <td className="px-4 py-2">{data.office}</td>
-                  <td className="px-4 py-2">{data.age}</td>
-                  <td className="px-4 py-2">{data.startDate}</td>
+                  <td className="px-4 py-2 hidden">{data.office}</td>
+                  <td className="px-4 py-2 hidden">{data.age}</td>
+                  <td className="px-4 py-2 hidden">{data.startDate}</td>
                   <td className="px-4 py-2">
                     <span className="text-yellow-500 font-semibold">$</span>
                     {data.salary.toString().slice(0, 2)},

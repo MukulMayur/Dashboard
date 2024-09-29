@@ -24,7 +24,7 @@ function Analytics() {
   }, []);
 
   return (
-    <div className="flex space-x-6 items-center bg-[#F7F9FA] shadow-sm p-2 py-4 ">
+    <div className="flex space-x-6 items-center bg-[#F7F9FA] shadow-sm p-2 py-4 hidden ">
       <div className="text-indigo-500 w-[5%] bg-white p-4 shadow-lg flex items-center justify-center rounded-lg">
         <RxDashboard size={32} />
       </div>
@@ -45,7 +45,7 @@ function Analytics() {
         </Tooltip>
         <div className="relative" ref={popButton}>
           <div
-            className="p-1 rounded-sm text-white bg-gradient-to-bl from-[#83d2ff] to-[#17aaff] active:from-[#0098EF] active:to-[#0098EF] hover:from-[#0097efce] hover:to-[#0097efce] flex items-center gap-1 cursor-pointer shadow-indigo-300 shadow-md active:shadow-none"
+            className="p-1 rounded-sm text-white bg-gradient-to-bl from-[#83d2ff] to-[#17aaff] active:from-[#0098EF] active:to-[#0098EF] hover:from-[#0097efce] hover:to-[#0097efce] md:flex lg:flex hidden items-center gap-1 cursor-pointer shadow-indigo-300 shadow-md active:shadow-none"
             onClick={() => setButtonPop(!isButtonPop)}
           >
             <FaToolbox className="px-1" size={24} />

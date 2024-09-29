@@ -10,6 +10,7 @@ import { PiSuitcase } from "react-icons/pi";
 import { TbUsers } from "react-icons/tb";
 import Logo from "/src/assets/Logo.png";
 import { Link } from "react-router-dom";
+import "../index.css";
 
 function Slidebar() {
   const [activeLink, setActiveLink] = useState(0);
@@ -29,7 +30,7 @@ function Slidebar() {
   const HELP = [{ id: 7, path: "/help", name: "Help", icon: LuHelpCircle }];
 
   return (
-    <div className="w-16 md:w-56 fixed left-0 top-0 h-screen pt-4 px-4 bg-white  z-10">
+    <div className="w-16 md:w-56 fixed left-0 top-0 h-screen pt-4 px-4 bg-[#282828] z-10">
       <Link to={"/"}>
         <div className="mb-4 flex items-center justify-center md:justify-start md:gap-2 cursor-pointer">
           <img src={Logo} className="w-10  " alt="Logo" />

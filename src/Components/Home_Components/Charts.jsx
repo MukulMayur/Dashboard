@@ -22,7 +22,7 @@ function Charts() {
   ];
 
   return (
-    <div className="flex h-[20rem] bg-[#FFFFFF] shadow-md p-2 py-4 m-2 rounded-md">
+    <div className="flex h-[20rem] bg-[#FFFFFF] shadow-md p-2 py-4 m-2 rounded-md hidden">
       <div className="w-full h-full">
         <ResponsiveContainer>
           <BarChart
