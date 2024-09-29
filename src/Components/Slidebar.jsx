@@ -30,12 +30,14 @@ function Slidebar() {
 
   return (
     <div className="w-16 md:w-56 fixed left-0 top-0 h-screen pt-4 px-4 bg-white  z-10">
-      <div className="mb-4 flex items-center justify-center md:justify-start md:gap-2 cursor-pointer">
-        <img src={Logo} className="w-10  " alt="Logo" />
-        <span className="font-bold text-[20px] sm:hidden hidden md:flex hover:text-indigo-500 text-gray-800">
-          Admin Master
-        </span>
-      </div>
+      <Link to={"/"}>
+        <div className="mb-4 flex items-center justify-center md:justify-start md:gap-2 cursor-pointer">
+          <img src={Logo} className="w-10  " alt="Logo" />
+          <span className="font-bold text-[20px] sm:hidden hidden md:flex hover:text-indigo-500 text-gray-800">
+            Admin Master
+          </span>
+        </div>
+      </Link>
 
       {/* Navigation */}
       <ul className="mt-2 space-y-1">

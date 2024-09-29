@@ -18,6 +18,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/" element={<Works />} />
         </Route>
       </Routes>
     </HashRouter>
