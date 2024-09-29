@@ -40,30 +40,30 @@ function Header() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center px-4 py-3 lg:h-14 sm:h-10 md:h-12 bg-white shadow-md hidden">
+    <div className="flex justify-between items-center px-4 py-3 lg:h-14 h-12 md:h-12 bg-[#282828] shadow-md shadow-gray-600 border-b border-b-gray-700 mb-2 ">
       <div className="flex items-center justify-between space-x-4">
         {!issearch && (
           <Tooltip text="Search">
             <div
-              className="text-white cursor-pointer p-1 ml-2 rounded-full transition-transform transform hover:scale-110 items-center"
+              className="text-[white] cursor-pointer p-1 md:ml-2 lg:ml-2 rounded-full transition-transform transform hover:scale-110 items-center"
               onClick={handlesearchclick}
             >
-              <IoSearchSharp size={24} className="text-gray-700" />
+              <IoSearchSharp size={24} className="text-white" />
             </div>
           </Tooltip>
         )}
         <div className="absolute">
           {issearch && (
-            <div className="hidden md:flex items-center transition-transform transform scale-0 origin-right animate-search-pop">
+            <div className="md:flex items-center transition-transform transform scale-0 origin-right animate-search-pop flex">
               <input
                 type="text"
                 placeholder="Search"
-                className="bg-indigo-200/20 text-gray-600 placeholder-gray-700 focus:outline-0 px-4 py-1 rounded-lg focus:ring-2 focus:ring-indigo-500 border-none transition-transform transform scale-0 animate-input-pop"
+                className="bg-gray-300 text-gray-100 placeholder-gray-600 focus:outline-0 px-4 py-1 rounded-lg focus:ring-2 focus:ring-indigo-500 border-none transition-transform transform scale-0 animate-input-pop w-44 md:w-full lg:w-full"
               />
               <Tooltip text="Close">
                 <IoClose
                   size={24}
-                  className="text-gray-700 cursor-pointer transition-transform transform hover:scale-110"
+                  className="text-gray-300 cursor-pointer transition-transform transform hover:scale-110"
                   onClick={() => handlesearchclick(!issearch)}
                 />
               </Tooltip>
@@ -72,15 +72,15 @@ function Header() {
         </div>
 
         {!issearch && (
-          <div>
+          <div className="hidden md:block lg:block">
             <div className="flex items-center space-x-5">
               <Tooltip text="Setting">
-                <div className="flex items-center gap-1 text-gray-700 cursor-pointer animate-spin-slow transition-transform transform hover:scale-110">
+                <div className="flex items-center gap-1 text-white cursor-pointer animate-spin-slow transition-transform transform hover:scale-110">
                   <FiSettings size={24} />
                 </div>
               </Tooltip>
               <Tooltip text="Language">
-                <div className="flex items-center gap-1 text-gray-700 cursor-pointer transition-transform transform hover:scale-110">
+                <div className="flex items-center gap-1 text-white cursor-pointer transition-transform transform hover:scale-110">
                   <GrLanguage size={24} />
                 </div>
               </Tooltip>
@@ -92,35 +92,26 @@ function Header() {
       <div className="flex items-center space-x-6">
         <div className="flex items-center space-x-5">
           <div className="flex space-x-5">
-            <div>
-              <Tooltip text="Projects">
-                <GoProjectSymlink
-                  size={24}
-                  className="text-gray-700 cursor-pointer transition-transform transform hover:scale-110"
-                />
-              </Tooltip>
+            <div className="hidden md:block lg:block">
+              <div className="text-gray-300 cursor-pointer transition-transform transform hover:scale-110 hover:text-white">
+                Projects
+              </div>
             </div>
-            <div>
-              <Tooltip text="Grid Dashboard">
-                <CgMenuGridO
-                  size={24}
-                  className="text-gray-700 cursor-pointer transition-transform transform hover:scale-110"
-                />
-              </Tooltip>
+            <div className="hidden md:block lg:block">
+              <div className="text-gray-300 cursor-pointer transition-transform transform hover:scale-110 hover:text-white">
+                Grid Dashboard
+              </div>
             </div>
-            <div>
-              <Tooltip text="Mega Menu">
-                <RxDropdownMenu
-                  size={24}
-                  className="text-gray-700 cursor-pointer transition-transform transform hover:scale-110"
-                />
-              </Tooltip>
+            <div className="hidden md:block lg:block">
+              <div className="text-gray-300 cursor-pointer transition-transform transform hover:scale-110 hover:text-white">
+                Mega Menu
+              </div>
             </div>
           </div>
 
           <div className="relative" ref={popoverRef}>
             <button
-              className={`flex  text-gray-700 relative ${
+              className={`flex  text-white relative ${
                 isSwinging ? "animate-swing" : ""
               }`}
               onClick={() => {

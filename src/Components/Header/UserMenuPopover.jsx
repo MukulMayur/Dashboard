@@ -5,9 +5,9 @@ import { AiOutlineMessage } from "react-icons/ai";
 
 function UserMenuPopover() {
   return (
-    <div className="absolute right-0 mt-2 w-72 rounded-sm shadow-lg z-10 flex flex-col text-white">
+    <div className="absolute right-0 mt-2 w-72 rounded-md shadow-lg z-10 flex flex-col text-white border-white border">
       <div
-        className="w-72 md:h-[72px] lg:h-[82px] sm:h-[50px] rounded-t-sm relative flex items-center sm:p-1 md:p-2 lg:p-3 xl:p-4 bg-cover bg-center justify-between"
+        className="w-full md:h-[92px] lg:h-[92px] h-[70px] rounded-t-md relative flex items-center p-2 md:p-2 lg:p-3 xl:p-4 bg-cover bg-center justify-between"
         style={{ backgroundImage: `url(${UserBg})` }}
       >
         <img
@@ -17,7 +17,7 @@ function UserMenuPopover() {
         />
         <div className="flex flex-col">
           <div className="text-sm text-[#ffffffe7]">
-            <span className="font-semibold">Maddy Sen</span>
+            <span className="font-semibold">Mukul Mayur</span>
           </div>
           <div className="text-xs">A short profile description.</div>
         </div>
@@ -25,23 +25,21 @@ function UserMenuPopover() {
           Logout
         </button>
       </div>
-      <div className="flex flex-col p-4 px-3 bg-white text-gray-700 justify-between ">
+      <div className="flex flex-col p-4 px-3 bg-[#282828] text-white justify-between rounded-b-md">
         <div className="p-1 text-sm font-semibold">Activity</div>
 
-        <div className="flex items-center justify-between p-1 text-xs font-semibold text-indigo-600">
+        <div className="flex items-center justify-between p-1 text-sm font-semibold text-indigo-400">
           <a href="#">Chats</a>
           <div className="flex items-center justify-center h-6 w-6 bg-red-500 text-white rounded-lg">
             <span>21</span>
           </div>
         </div>
 
-        <div className="p-1 text-xs font-semibold text-indigo-600 cursor-pointer">
+        <div className="p-1 text-sm font-semibold text-indigo-400 cursor-pointer">
           Recover Password
         </div>
 
-        <div className="p-1 text-sm font-semibold text-gray-700">
-          MY ACCOUNT
-        </div>
+        <div className="p-1 text-sm font-semibold text-white">MY ACCOUNT</div>
         <hr />
         <div className="text-center mt-3 flex space-x-2 items-center justify-around">
           <div className="flex flex-col border items-center border-gray-200 rounded-lg p-2 hover:text-white hover:bg-[#F7B924] active:bg-[#f7b824dc]">
@@ -62,12 +60,6 @@ function UserMenuPopover() {
           </div>
         </div>
         <hr className="mt-2" />
-      </div>
-
-      <div className="text-center rounded-b-sm bg-white">
-        <button className="mb-2 bg-black text-slate-200 p-1 text-xs rounded-full px-2 active:bg-gray-700">
-          View latest Changes
-        </button>
       </div>
     </div>
   );
