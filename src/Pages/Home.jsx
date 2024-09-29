@@ -10,11 +10,10 @@ function Home() {
       <div>
         <Analytics />
       </div>
-
       <div className="flex flex-col  md:flex lg:flex-row p-2 space-x-2">
         <TopDisplay />
       </div>
-      <div>
+      <div className="w-full p-3">
         <Charts />
       </div>
       <div>

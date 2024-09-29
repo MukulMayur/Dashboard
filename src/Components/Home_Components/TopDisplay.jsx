@@ -40,8 +40,8 @@ function TopDisplay1() {
       Percentage: "+15.40%",
       Circle_Percentage: "54%",
       month: "last month",
-      icon: IoIosTrendingUp,
-      color: "green-500",
+      icon: IoIosTrendingDown,
+      color: "red-500",
     },
   ];
   return (

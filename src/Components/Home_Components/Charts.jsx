@@ -22,14 +22,14 @@ function Charts() {
   ];
 
   return (
-    <div className="flex h-[20rem] bg-[#FFFFFF] shadow-md p-2 py-4 m-2 rounded-md hidden">
+    <div className="flex h-[20rem] md:h-[24rem] lg:h-[26rem] bg-[#282828] shadow-md py-4 md:py-5 lg:py-5  rounded-md">
       <div className="w-full h-full">
         <ResponsiveContainer>
           <BarChart
             data={data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 5, right: 25, left: 10, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid strokeDasharray="0" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
@@ -38,14 +38,14 @@ function Charts() {
               dataKey="pv"
               fill="#8884d8"
               // Customizing activeBar
-              barSize={30}
+              barSize={40}
               radius={[5, 5, 0, 0]}
             />
             <Bar
               dataKey="uv"
               fill="#82ca9d"
               // Customizing activeBar
-              barSize={30}
+              barSize={40}
               radius={[5, 5, 0, 0]}
             />
           </BarChart>
