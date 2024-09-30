@@ -5,18 +5,18 @@ function TopDisplay1() {
   const CHART_INFO = [
     {
       id: 1,
-      name: "Total Images",
-      GB: "26,435 GB",
+      name: "En Route",
+      Count: "4,230 Vehicle",
       Percentage: "+32.40%",
-      Circle_Percentage: "32%",
+      Circle_Percentage: "52%",
       month: "last month",
       icon: IoIosTrendingUp,
       color: "green-500",
     },
     {
       id: 2,
-      name: "Total Videos",
-      GB: "54,439 GB",
+      name: "Faulty Vehicle",
+      Count: "1,012 Vehicle",
       Percentage: "-18.45%",
       Circle_Percentage: "48%",
       month: "last month",
@@ -25,20 +25,20 @@ function TopDisplay1() {
     },
     {
       id: 3,
-      name: "Total Documents",
-      GB: "91,825 GB",
+      name: "Off-Route",
+      Count: "525 Vehicle",
       Percentage: "+20.40%",
-      Circle_Percentage: "88%",
+      Circle_Percentage: "28%",
       month: "last month",
       icon: IoIosTrendingUp,
       color: "green-500",
     },
     {
       id: 4,
-      name: "Total Music",
-      GB: "63,935 GB",
+      name: "Delayed Vehicle",
+      Count: "1,535 Vehicle",
       Percentage: "+15.40%",
-      Circle_Percentage: "54%",
+      Circle_Percentage: "18%",
       month: "last month",
       icon: IoIosTrendingDown,
       color: "red-500",
@@ -55,7 +55,7 @@ function TopDisplay1() {
               </p>
             </div>
             <div className="flex justify-start text-lg md:text-lg lg:text-xl w-full text-white">
-              <strong>{item.GB}</strong>
+              <strong>{item.Count}</strong>
             </div>
             <div className="flex items-center space-x-1 w-full">
               <div
