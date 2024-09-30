@@ -10,14 +10,22 @@ import { GoProjectSymlink } from "react-icons/go";
 import { CgMenuGridO } from "react-icons/cg";
 import { RxDropdownMenu } from "react-icons/rx";
 import Tooltip from "../../Tooltip";
+import { RxHamburgerMenu } from "react-icons/rx";
+import Slidebar from "../Slidebar";
 
 function Header() {
   const [isSwinging, setIsSwinging] = useState(true);
   const [isPopOverOpen, setPopOverOpen] = useState(false);
   const [isUserPopOver, setUserPopOver] = useState(false);
   const [issearch, setSearch] = useState(false);
+  const [slideBar, setSlideBar] = useState(false);
   const popUserRef = useRef(null);
   const popoverRef = useRef(null);
+  const sideMenuRef = useRef(null);
+
+  const handleMenu = () => {
+    setSlideBar(!slideBar);
+  };
 
   const handlesearchclick = () => {
     setSearch(!issearch);
@@ -31,6 +39,9 @@ function Header() {
       if (popUserRef.current && !popUserRef.current.contains(event.target)) {
         setUserPopOver(false);
       }
+      if (sideMenuRef.current && !sideMenuRef.current.contains(event.target)) {
+        setSlideBar(false);
+      }
     };
 
     document.addEventListener("mousedown", handleClick);
@@ -40,12 +51,20 @@ function Header() {
   }, []);
 
   return (
-    <div className="flex justify-between items-center px-4 py-3 lg:h-14 h-12 md:h-12 bg-[#282828] shadow-md shadow-gray-600 border-b border-b-gray-700 mb-2 ">
+    <div className="flex justify-between items-center px-4 py-3 lg:h-14 h-12 md:h-12 bg-[#282828] shadow-md shadow-gray-600 border-b border-b-gray-700 mb-2 fixed w-full z-10">
       <div className="flex items-center justify-between space-x-4">
+        <div className="text-white cursor-pointer" onClick={handleMenu}>
+          <RxHamburgerMenu size={24} />
+        </div>
+        {slideBar && (
+          <div className="relative" ref={sideMenuRef}>
+            <Slidebar />
+          </div>
+        )}
         {!issearch && (
           <Tooltip text="Search">
             <div
-              className="text-[white] cursor-pointer p-1 md:ml-2 lg:ml-2 rounded-full transition-transform transform hover:scale-110 items-center"
+              className="text-[white] md:flex cursor-pointer md:ml-2 lg:ml-2 rounded-full transition-transform transform hover:scale-110 items-center hidden"
               onClick={handlesearchclick}
             >
               <IoSearchSharp size={24} className="text-white" />
@@ -54,11 +73,11 @@ function Header() {
         )}
         <div className="absolute">
           {issearch && (
-            <div className="md:flex items-center transition-transform transform scale-0 origin-right animate-search-pop flex">
+            <div className="md:flex items-center transition-transform transform scale-0 origin-right animate-search-pop flex ">
               <input
                 type="text"
                 placeholder="Search"
-                className="bg-gray-300 text-gray-100 placeholder-gray-600 focus:outline-0 px-4 py-1 rounded-lg focus:ring-2 focus:ring-indigo-500 border-none transition-transform transform scale-0 animate-input-pop w-44 md:w-full lg:w-full"
+                className="bg-gray-300 text-black placeholder-gray-600 focus:outline-0 px-4 py-1 rounded-lg focus:ring-2 focus:ring-indigo-500 border-none transition-transform transform scale-0 animate-input-pop w-44 md:w-full lg:w-full ml-8"
               />
               <Tooltip text="Close">
                 <IoClose

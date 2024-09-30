@@ -8,6 +8,7 @@ import { MdOutlineForwardToInbox } from "react-icons/md";
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaRegImage } from "react-icons/fa6";
 import { FaRegFile } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 
 function Analytics() {
   const [isButtonPop, setButtonPop] = useState(false);
@@ -24,7 +25,7 @@ function Analytics() {
   }, []);
 
   return (
-    <div className="flex md:flex-row flex-col md:space-x-6 lg:space-x-6 items-center bg-[#282828] shadow-sm p-2 px-4 py-4 gap-y-4 rounded-xl md:rounded-none lg:rounded-none">
+    <div className="flex md:flex-row flex-col md:space-x-6 lg:space-x-6 items-center bg-[#282828] shadow-sm p-2 px-4 py-4 gap-y-4 rounded-xl md:rounded-none lg:rounded-none md:mt-16 lg:mt-16 mt-12">
       <div className="text-indigo-500 w-[5%] bg-white p-4 shadow-lg md:flex lg:flex items-center justify-center rounded-lg hidden">
         <RxDashboard size={32} />
       </div>
@@ -39,11 +40,15 @@ function Analytics() {
         </p>
       </div>
       <div className="flex content-end space-x-4 w-full md:w-[17%] lg:w-[17%]">
-        <Tooltip text={"Sample Records"}>
-          <button className="bg-gray-700 text-white p-2 rounded-sm active:bg-gray-900">
-            <FaStar />
-          </button>
+        <Tooltip text={"Github"}>
+          <a target="_blank" href="https://github.com/MukulMayur/Dashboard">
+            <button className="bg-gray-700 text-white p-2 px-3 rounded-sm active:bg-gray-800 flex gap-2">
+              <FaGithub />
+              <FaStar />
+            </button>
+          </a>
         </Tooltip>
+
         <div className="relative" ref={popButton}>
           <div
             className="p-1 rounded-sm text-white bg-gradient-to-bl from-[#83d2ff] to-[#17aaff] active:from-[#0098EF] active:to-[#0098EF] hover:from-[#0097efce] hover:to-[#0097efce] flex items-center gap-1 cursor-pointer shadow-indigo-300 shadow-md active:shadow-none"

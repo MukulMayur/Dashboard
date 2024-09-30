@@ -47,7 +47,7 @@ function TopDisplay1() {
   return (
     <div className="flex md:flex-row flex-col w-full md:space-x-2 space-y-2 md:space-y-0 bg-[#010409] px-1 py-2">
       {CHART_INFO.map((item) => (
-        <div className="flex bg-[#282828] px-3 text-gray-700 w-full rounded-xl h-[100px] md:h-[100px] lg:h-[120px] items-center justify-around shadow-md ">
+        <div className="flex bg-[#282828] px-3 text-gray-700 w-full rounded-xl h-full  md:h-[100px] lg:h-[120px] items-center justify-around shadow-md">
           <div className="flex flex-col items-center">
             <div className="justify-start w-full">
               <p className="text-white text-md md:text-[15px] lg:text-[18px]">
