@@ -94,7 +94,9 @@ function Table() {
       <div className="flex items-center justify-between w-full px-4">
         <div className="w-full flex gap-x-4">
           <GrTable size={28} className="text-gray-500" />
-          <div>Easy Dynamic Tables</div>
+          <div className="text-xl text-[#9147BC] font-bold">
+            Easy Dynamic Tables
+          </div>
         </div>
         <div className="items-end">
           <RxDragHandleHorizontal size={32} />
@@ -137,42 +139,42 @@ function Table() {
           <thead>
             <tr className="bg-[#282828] text-white w-full  border-b cursor-pointer text-lg font-semibold text-left">
               <td
-                className="px-4 py-2 min-w-[220px]"
+                className="px-4 py-2 min-w-[260px] md:min-w-[300px]"
                 onClick={() => handleSort("name")}
               >
                 Name
                 {getSortIcon("name")}
               </td>
               <td
-                className="px-4 py-2 md:w-[240px] lg:w-[240px] min-w-[350px]"
-                onClick={() => handleSort("position")}
+                className="px-4 py-2 min-w-[220px]"
+                onClick={() => handleSort("Vehicle_No")}
               >
-                Position
+                Vehicle No.
                 {getSortIcon("position")}
               </td>
               <td
                 className="px-4 py-2 min-w-[180px]"
                 onClick={() => handleSort("office")}
               >
-                Office {getSortIcon("office")}
+                License No. {getSortIcon("office")}
               </td>
               <td
-                className="px-4 py-2 min-w-[120px]"
-                onClick={() => handleSort("age")}
+                className="px-4 py-2 min-w-[160px]"
+                onClick={() => handleSort("Trips_Completed")}
               >
-                Age {getSortIcon("age")}
+                Trips{getSortIcon("Trips_Completed")}
               </td>
               <td
                 className="px-4 py-2 min-w-[180px]"
-                onClick={() => handleSort("startDate")}
+                onClick={() => handleSort("Status")}
               >
-                Start Date {getSortIcon("startDate")}
+                Status {getSortIcon("Status")}
               </td>
               <td
-                className="px-4 py-2 min-w-[120px]"
-                onClick={() => handleSort("salary")}
+                className="px-4 py-2 min-w-[180px]"
+                onClick={() => handleSort("Feedback")}
               >
-                Salary {getSortIcon("salary")}
+                Ratings {getSortIcon("Feedback")}
               </td>
             </tr>
           </thead>
@@ -198,15 +200,21 @@ function Table() {
                     </div>
                     <div>{data.name}</div>
                   </td>
-                  <td className="px-4 py-2">{data.position}</td>
-                  <td className="px-4 py-2">{data.office}</td>
-                  <td className="px-4 py-2">{data.age}</td>
-                  <td className="px-4 py-2">{data.startDate}</td>
-                  <td className="px-4 py-2">
-                    <span className="text-yellow-500 font-semibold">$</span>
-                    {data.salary.toString().slice(0, 2)},
-                    {data.salary.toString().slice(2, 5)}
+                  <td className="px-4 py-2">{data.Vehicle_No}</td>
+                  <td className="px-4 py-2">{data.License_No}</td>
+                  <td className="px-4 py-2">{data.Trips_Completed}</td>
+                  <td
+                    className={`${
+                      data.Status === "En Route"
+                        ? "text-[#FFA500]"
+                        : data.Status === "Available"
+                        ? "text-[#32CD32]"
+                        : "text-[#FF4500]"
+                    } px-4 py-2`}
+                  >
+                    {data.Status}
                   </td>
+                  <td className="px-4 py-2">{data.Feedback}</td>
                 </tr>
               ))
             )}
