@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TopDisplay from "../Components/Home_Components/TopDisplay";
 import Analytics from "../Components/Home_Components/Analytics";
 import BarChart from "../Components/Charts/BarChart";
@@ -6,8 +6,21 @@ import { FaTruckLoading } from "react-icons/fa";
 import { FiDownload, FiUpload } from "react-icons/fi";
 import { FaHourglassHalf } from "react-icons/fa";
 import Table from "../Components/Home_Components/Table";
+import Data from "../Components/Home_Components/TableData";
+import "../index.css";
 
 function Home() {
+  const [drivers, setDrivers] = useState(Data);
+  const [searchDriver, setSearchDriver] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchDriver(String(e.target.value));
+  };
+
+  const filteredDrivers = drivers.filter((driver) =>
+    driver.name.includes(searchDriver)
+  );
+
   return (
     <div className="flex flex-col">
       <div className="px-3 pt-3 md:p-0 lg:p-0">
@@ -19,7 +32,7 @@ function Home() {
       <div className="flex px-3 gap-2 w-full bg-[#010409] mb-4 md:flex-row lg:flex-row flex-col">
         <div className="md:flex-[5] w-full rounded-xl md:p-2 lg:p-2 bg-[#282828] md:h-[92vh]">
           <BarChart />
-          <h2 className="p-2 px-6 text-xl text-[#914cd6] font-bold pt-0 md:pb-2 lg:pb-2 overflow-y-auto">
+          <h2 className="p-2 px-6 text-xl text-[#914cd6] font-bold pt-0 md:pb-2 lg:pb-2 overflow-y-auto ">
             Quarterly Shipping Data
           </h2>
           <div className="p-4 pt-0 md:p-4 lg:p-4  h-[28vh] md:h-[35vh] lg:h-[40vh] overflow-y-auto">
@@ -147,8 +160,86 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="flex-[2.5] rounded-xl p-4 bg-[#282828]  h-[45vh]">
-            Chart1
+          <div className="flex-[2.5] rounded-xl p-4 bg-[#282828]  h-[75vh] md:h-[45vh] overflow-y-auto elements">
+            <div className="bg-[#282828] rounded-md h-[40vh] w-full">
+              <div className="p-1  text-[#914cd6] justify-between font-bold pt-0 md:pb-2 lg:pb-2 flex mb-2">
+                <h2 className="text-xl">Driver Overview</h2>
+                <input
+                  type="text"
+                  value={searchDriver}
+                  onChange={handleSearch}
+                  placeholder="Search Driver Information"
+                  className="bg-indigo-200/40 font-medium text-gray-200 w-[50%] placeholder-gray-200 focus:outline-0 px-4 py-1 rounded-lg focus:ring-2 focus:ring-gray-200 border-none"
+                />
+              </div>
+              {(searchDriver === "" ? [drivers[0]] : filteredDrivers).map(
+                (driver) => (
+                  <div
+                    key={driver.id}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5"
+                  >
+                    {/* Driver Info */}
+                    <div className="bg-[#007BFF] p-4 rounded-lg shadow-lg">
+                      <h3 className="text-xl font-bold text-[#ffffff]">
+                        Driver Information
+                      </h3>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>Name:</strong> {driver.name}
+                      </p>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>License No:</strong> 12345XYZ
+                      </p>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>Phone:</strong> +1 234 567 890
+                      </p>
+                    </div>
+
+                    {/* Vehicle Status */}
+                    <div className="bg-[#FFB74D] p-4 rounded-lg shadow-lg">
+                      <h3 className="text-xl font-bold text-[#3e2723e3]">
+                        Vehicle Information
+                      </h3>
+                      <p className="text-md md:text-lg text-[#3e2723e3]">
+                        <strong>Vehicle:</strong> AB123CD
+                      </p>
+                      <p className="text-md md:text-lg text-[#3e2723e3]">
+                        <strong>Status:</strong> En Route
+                      </p>
+                      <p className="text-md md:text-lg text-[#3e2723e3]">
+                        <strong>Last Checkpoint:</strong> NYC Depot
+                      </p>
+                    </div>
+                    {/* Driver Performance */}
+                    <div className="bg-[#7C7C7C] p-4 rounded-lg shadow-lg">
+                      <h3 className="text-xl font-bold text-[#FFFFFF]">
+                        Performance
+                      </h3>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>Trips Completed:</strong> 45
+                      </p>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>Current Trip:</strong> 3 hours
+                      </p>
+                      <p className="text-md md:text-lg text-[#FFFFFF]">
+                        <strong>Feedback:</strong> 4.8/5
+                      </p>
+                    </div>
+                    <div>
+                      <hr />
+                    </div>
+                  </div>
+                )
+              )}
+
+              <div className="flex justify-between mt-6">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                  View Full Route
+                </button>
+                <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+                  Report Issue
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

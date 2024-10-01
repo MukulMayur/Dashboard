@@ -108,3 +108,8 @@ body {
   top: 35px;
   z-index: 10;
 }
+
+/* For WebKit browsers (Chrome, Safari) */
+.elements::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
