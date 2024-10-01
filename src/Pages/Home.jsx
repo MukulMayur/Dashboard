@@ -5,6 +5,7 @@ import BarChart from "../Components/Charts/BarChart";
 import { FaTruckLoading } from "react-icons/fa";
 import { FiDownload, FiUpload } from "react-icons/fi";
 import { FaHourglassHalf } from "react-icons/fa";
+import Table from "../Components/Home_Components/Table";
 
 function Home() {
   return (
@@ -16,13 +17,13 @@ function Home() {
         <TopDisplay />
       </div>
       <div className="flex px-3 gap-2 w-full bg-[#010409] mb-4 md:flex-row lg:flex-row flex-col">
-        <div className="md:flex-[5] w-full rounded-xl md:p-2 lg:p-2 bg-[#282828]">
+        <div className="md:flex-[5] w-full rounded-xl md:p-2 lg:p-2 bg-[#282828] md:h-[92vh]">
           <BarChart />
-          <h2 className="p-4 px-6 text-xl text-[#914cd6] font-bold pt-0 md:pb-2 lg:pb-2 overflow-y-auto">
+          <h2 className="p-2 px-6 text-xl text-[#914cd6] font-bold pt-0 md:pb-2 lg:pb-2 overflow-y-auto">
             Quarterly Shipping Data
           </h2>
-          <div className="p-4 pt-0 md:p-4 lg:p-4 h-[28vh] md:h-[35vh] lg:h-[35vh] overflow-y-auto">
-            <div className="border-[2px] border-gray-500 overflow-hidden rounded-md text-sm md:text-md lg:text-md">
+          <div className="p-4 pt-0 md:p-4 lg:p-4  h-[28vh] md:h-[35vh] lg:h-[40vh] overflow-y-auto">
+            <div className="border-[2px] border-gray-500 overflow-hidden rounded-md text-sm md:text-md lg:text-md md:mt-4">
               <div className="flex text-white font-semibold bg-transparent p-2  justify-between border-b-[2px] border-gray-500">
                 <div className="flex-1 text-center">Quater</div>
                 <div className="flex-1 text-center">Shipments</div>
@@ -57,7 +58,7 @@ function Home() {
           </div>
         </div>
         <div className="flex-[5] flex-col md:pl-2 lg:pl-2 space-y-4 w-full">
-          <div className="flex-[2.5] rounded-xl p-4 px-4 h-[40vh] md:h-[45vh] lg:h-[48vh] bg-[#282828] text-white mt-2 md:mt-0 lg:mt-0">
+          <div className="flex-[2.5] rounded-xl p-4 px-4 h-[40vh] md:h-[45vh] lg:h-[45vh] bg-[#282828] text-white mt-2 md:mt-0 lg:mt-0">
             <h2 className="p-2 px-0 text-xl text-[#914cd6] font-bold pt-0 md:pb-2 lg:pb-2 overflow-y-auto">
               Vehicles Overview
             </h2>
@@ -101,7 +102,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className=" pt-0 md:p-4 lg:p-4 h-[28vh] md:h-[35vh] lg:h-[35vh] overflow-y-auto w-full mt-4">
+            <div className=" pt-0 md:p-4 lg:p-4 h-[28vh] md:h-[25vh] lg:h-[25vh] overflow-y-auto w-full mt-4">
               <div className="border-[2px] border-gray-500 overflow-hidden rounded-md text-sm md:text-md lg:text-md">
                 <div className="flex text-white bg-transparent p-2 pl-6 justify-around border-b-[2px] border-gray-500">
                   <div className="flex-1 text-left flex gap-2 items-center">
@@ -150,6 +151,9 @@ function Home() {
             Chart1
           </div>
         </div>
+      </div>
+      <div className="px-2">
+        <Table />
       </div>
     </div>
   );

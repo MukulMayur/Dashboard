@@ -98,7 +98,7 @@ const BarChart = () => {
   };
 
   return (
-    <div className="flex w-full rounded-xl h-[40vh] md:h-[50vh] lg:h-[ bg-[#282828] p-4 text-white">
+    <div className="flex w-full rounded-xl h-[40vh] md:h-[50vh] lg:h-[50vh] bg-[#282828] p-4 text-white">
       <Bar data={barChartData} options={barChartOptions} />
     </div>
   );
