@@ -21,11 +21,11 @@ function Table() {
     const newData = Data.filter((row) => {
       return (
         row.name.toLowerCase().includes(searchValue) ||
-        row.position.toLowerCase().includes(searchValue) ||
-        row.office.toLowerCase().includes(searchValue) ||
-        row.age.toString().includes(searchValue) ||
-        row.startDate.toLowerCase().includes(searchValue) ||
-        row.salary.toString().includes(searchValue)
+        row.Vehicle_No.toLowerCase().includes(searchValue) ||
+        row.License_No.toLowerCase().includes(searchValue) ||
+        row.Trips_Completed.toString().includes(searchValue) ||
+        row.Status.toLowerCase().includes(searchValue) ||
+        row.Feedback.toString().includes(searchValue)
       );
     });
     setSearchRecord(newData);
